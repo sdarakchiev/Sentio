@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentio", "Sentio\Sentio.csproj", "{13FDE2D1-D45D-48D2-9059-20450DD8E01B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentio.Tests", "Sentio.Tests\Sentio.Tests.csproj", "{94996971-45FC-4A38-B9A8-33D18E6EBD62}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13FDE2D1-D45D-48D2-9059-20450DD8E01B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13FDE2D1-D45D-48D2-9059-20450DD8E01B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13FDE2D1-D45D-48D2-9059-20450DD8E01B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13FDE2D1-D45D-48D2-9059-20450DD8E01B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94996971-45FC-4A38-B9A8-33D18E6EBD62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94996971-45FC-4A38-B9A8-33D18E6EBD62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94996971-45FC-4A38-B9A8-33D18E6EBD62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94996971-45FC-4A38-B9A8-33D18E6EBD62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
