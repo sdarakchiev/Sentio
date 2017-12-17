@@ -1,0 +1,26 @@
+﻿@model Sentio.Areas.Admin.Models.ArticleViewModel
+
+@using (Html.BeginForm("Index", "Article", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.LabelFor(m => m.Author, "Author:")
+        @Html.EditorFor(m => m.Author)
+        @Html.ValidationMessageFor(m => m.Author)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Title, "Title:")
+        @Html.EditorFor(m => m.Title)
+        @Html.ValidationMessageFor(m => m.Title)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Content, "Content:")
+        @Html.TextAreaFor(m => m.Content)
+        @Html.ValidationMessageFor(m => m.Content)
+    </div>
+
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+}

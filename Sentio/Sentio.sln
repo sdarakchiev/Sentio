@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentio", "Sentio\Sentio.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentio.Tests", "Sentio.Tests\Sentio.Tests.csproj", "{94996971-45FC-4A38-B9A8-33D18E6EBD62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentio.Data", "Sentio.Data\Sentio.Data.csproj", "{48B41E9F-EC23-4A95-9ECF-2A33F8BFCC57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{94996971-45FC-4A38-B9A8-33D18E6EBD62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94996971-45FC-4A38-B9A8-33D18E6EBD62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94996971-45FC-4A38-B9A8-33D18E6EBD62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48B41E9F-EC23-4A95-9ECF-2A33F8BFCC57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48B41E9F-EC23-4A95-9ECF-2A33F8BFCC57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48B41E9F-EC23-4A95-9ECF-2A33F8BFCC57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48B41E9F-EC23-4A95-9ECF-2A33F8BFCC57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

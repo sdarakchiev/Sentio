@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Sentio.Data.DataModels;
 
 namespace Sentio.Models
 {
@@ -25,6 +26,8 @@ namespace Sentio.Models
         {
         }
 
+        public virtual IDbSet<Article>Articles { get; set; }
+ 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
