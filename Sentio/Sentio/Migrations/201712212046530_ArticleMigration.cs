@@ -3,7 +3,7 @@ namespace Sentio.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Article : DbMigration
+    public partial class ArticleMigration : DbMigration
     {
         public override void Up()
         {
@@ -12,6 +12,7 @@ namespace Sentio.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Author = c.String(),
                         Title = c.String(),
                         Content = c.String(),
                     })

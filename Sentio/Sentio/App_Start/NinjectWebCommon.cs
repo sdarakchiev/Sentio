@@ -13,6 +13,7 @@ namespace Sentio.App_Start
     using Microsoft.AspNet.Identity.Owin;
     using Sentio.Models;
     using Ninject.Web.Common.WebHost;
+    using Sentio.Areas.Admin.Services;
 
     public static class NinjectWebCommon 
     {
@@ -76,6 +77,8 @@ namespace Sentio.App_Start
            .GetOwinContext()
            .Get<ApplicationDbContext>())
            .InRequestScope();
+
+            kernel.Bind<IArticleServices>().To<ArticleServices>();
         }        
     }
 }

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<ArticleViewModel>
+@foreach (var article in @Model)
+{
+    <div>
+        Author: @article.Author
+    </div>
+    <div>
+        Title: @article.Title
+    </div>
+    <div>
+        Content: @article.Content
+    </div>
+}

@@ -15,5 +15,6 @@ namespace Sentio.Data.DataModels
         public string Title { get; set; }
 
         public string Content { get; set; }
+        
     }
 }

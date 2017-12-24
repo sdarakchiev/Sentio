@@ -7,13 +7,13 @@ namespace Sentio.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Article : IMigrationMetadata
+    public sealed partial class ArticleMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Article));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ArticleMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712162054065_Article"; }
+            get { return "201712212046530_ArticleMigration"; }
         }
         
         string IMigrationMetadata.Source

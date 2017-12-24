@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using Sentio.Areas.Admin.Models;
+using Sentio.Areas.Admin.Services;
 using Sentio.Models;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,7 @@ namespace Sentio.Controllers
     {
         private readonly ApplicationUserManager userManager;
         private readonly ApplicationDbContext dbContext;
+        private readonly IArticleServices articleService;
 
         public HomeController(ApplicationUserManager userManager, ApplicationDbContext dbContext)
         {
@@ -23,6 +26,18 @@ namespace Sentio.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult GetArticles()
+        {
+            this.articleService.ListAllArticles().Select(a => new ArticleViewModel()
+            {
+                Title = a.Title,
+                Content = a.Content,
+                Author = a.Author
+            });
+
+            return this.PartialView("_AllArticles");
         }
 
         [Authorize]

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Sentio.Areas.Admin.Models
+namespace Sentio.Data.Models
 {
-    public class ArticleViewModel
+    public class ArticleModel
     {
         public int Id { get; set; }
 

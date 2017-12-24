@@ -1,26 +1,59 @@
-﻿@model Sentio.Areas.Admin.Models.ArticleViewModel
+﻿@model Sentio.Areas.Admin.Models.ArticleContainerViewModel
 
-@using (Html.BeginForm("Index", "Article", FormMethod.Post))
+@{ 
+    ViewBag.Title = "Articles";
+}
+
+@using (Html.BeginForm("Index", "Admin", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
     <div>
-        @Html.LabelFor(m => m.Author, "Author:")
-        @Html.EditorFor(m => m.Author)
-        @Html.ValidationMessageFor(m => m.Author)
+        @Html.LabelFor(m => m.CreateArticle.Author, "Author:")
+        @Html.EditorFor(m => m.CreateArticle.Author)
+        @Html.ValidationMessageFor(m => m.CreateArticle.Author)
     </div>
     <div>
-        @Html.LabelFor(m => m.Title, "Title:")
-        @Html.EditorFor(m => m.Title)
-        @Html.ValidationMessageFor(m => m.Title)
+        @Html.LabelFor(m => m.CreateArticle.Title, "Title:")
+        @Html.EditorFor(m => m.CreateArticle.Title)
+        @Html.ValidationMessageFor(m => m.CreateArticle.Title)
     </div>
     <div>
-        @Html.LabelFor(m => m.Content, "Content:")
-        @Html.TextAreaFor(m => m.Content)
-        @Html.ValidationMessageFor(m => m.Content)
+        @Html.LabelFor(m => m.CreateArticle.Content, "Content:")
+        @Html.TextAreaFor(m => m.CreateArticle.Content)
+        @Html.ValidationMessageFor(m => m.CreateArticle.Content)
     </div>
 
     <div>
         <input type="submit" value="Save" />
     </div>
+}
+
+<h2>Articles</h2>
+@if (@Model.Articles != null)
+{
+    foreach (var article in @Model.Articles)
+    {
+        <div>
+            Author: @article.Author
+        </div>
+        <div>
+            Title: @article.Title
+        </div>
+
+        
+        using (Html.BeginForm("DeleteArticle", "Admin", new { id = article.Id }, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div>
+                <input type="submit" class="button" value="Delete" />
+            </div>
+        }
+
+    }
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
 }
