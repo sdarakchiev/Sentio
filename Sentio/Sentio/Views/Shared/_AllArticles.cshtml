@@ -1,13 +1,14 @@
-﻿@model IEnumerable<ArticleViewModel>
+﻿
+@model IEnumerable<Sentio.Areas.Admin.Models.ArticleViewModel>
 @foreach (var article in @Model)
 {
-    <div>
-        Author: @article.Author
-    </div>
     <div>
         Title: @article.Title
     </div>
     <div>
         Content: @article.Content
+    </div>
+    <div>
+        Author: @article.Author
     </div>
 }

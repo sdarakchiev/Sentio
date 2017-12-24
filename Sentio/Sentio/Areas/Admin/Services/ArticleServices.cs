@@ -1,6 +1,7 @@
 ﻿using Bytes2you.Validation;
 using Sentio.Areas.Admin.Models;
 using Sentio.Data.DataModels;
+using Sentio.Data.Models;
 using Sentio.Models;
 using System;
 using System.Collections.Generic;
@@ -50,5 +51,22 @@ namespace Sentio.Areas.Admin.Services
         {
             return this.dbContext.Articles.ToList();
         }
+
+        public IEnumerable<ArticleModel> GetTopArticles(int count)
+        {
+            return this.dbContext
+                .Articles
+                .Select(a =>
+                new ArticleModel()
+                {
+                    Title = a.Title,
+                    Content = a.Content,
+                    Author = a.Author
+                })
+                .Take(count)
+                .ToList();
+        }
     }
+
+
 }

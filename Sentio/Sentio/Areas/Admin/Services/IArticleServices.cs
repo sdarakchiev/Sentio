@@ -1,4 +1,5 @@
 ﻿using Sentio.Data.DataModels;
+using Sentio.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,7 @@ namespace Sentio.Areas.Admin.Services
         void DeleteArticle(Article article);
 
         IEnumerable<Article> ListAllArticles();
+
+        IEnumerable<ArticleModel> GetTopArticles(int count);
     }
 }

@@ -17,10 +17,11 @@ namespace Sentio.Controllers
         private readonly ApplicationDbContext dbContext;
         private readonly IArticleServices articleService;
 
-        public HomeController(ApplicationUserManager userManager, ApplicationDbContext dbContext)
+        public HomeController(ApplicationUserManager userManager, ApplicationDbContext dbContext, IArticleServices articleService)
         {
             this.userManager = userManager;
             this.dbContext = dbContext;
+            this.articleService = articleService;
         }
 
         public ActionResult Index()
@@ -28,16 +29,19 @@ namespace Sentio.Controllers
             return View();
         }
 
-        public ActionResult GetArticles()
+        public ActionResult GetTopArticles()
         {
-            this.articleService.ListAllArticles().Select(a => new ArticleViewModel()
+            var viewModel = this.articleService
+                .GetTopArticles(3)
+                .Select(a => new ArticleViewModel()
             {
                 Title = a.Title,
                 Content = a.Content,
                 Author = a.Author
-            });
-
-            return this.PartialView("_AllArticles");
+            })
+            .ToList();
+            
+            return this.PartialView("_AllArticles", viewModel);
         }
 
         [Authorize]
