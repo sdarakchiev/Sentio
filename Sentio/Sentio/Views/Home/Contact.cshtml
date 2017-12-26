@@ -1,17 +1,34 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h2>КОНТАКТИ</h2>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<img id="contactImage" src="../../contact-image.jpg" />
+<div>
+    <img id="icon" src="../../images/phone1.png" />
+    +359878268696
+</div>
+<div>
+    <img id="icon" src="../../images/email1.png" />
+    eva@sentio.bg
+</div>
+<p>
+    <span>Работно време:</span> От понеделник до петък – 09.00 до 20.00ч.
+</p>
+<p id="note">
+    *В събота, неделя, празнични и почивни дни – по предварителна уговорка.
+</p>
+<p>
+    <span>Адрес:</span> Сесиите се провеждат на две места в София, в тихи и дискретни пространства. Допълнителна информация за локациите ще получите при първоначално записване на час.
+</p>
+<p>
+    <span>Искате ли заедно да разглеждаме темите, които са важни и интересни за вас? Помислете за нещата, които бихте искали да научите и четете.</span>
+</p>
+<p>
+    Ще се радвам да споделяте вашите предложения за статии и практически сесии на email: eva@sentio.bg.
+</p>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+@section styles{
+    @Styles.Render("~/Content/home")
+}

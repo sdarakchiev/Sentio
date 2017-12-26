@@ -41,16 +41,14 @@ namespace Sentio.Controllers
             })
             .ToList();
             
-            return this.PartialView("_AllArticles", viewModel);
+            return this.PartialView("_TopArticles", viewModel);
         }
 
-        [Authorize]
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
-            this.dbContext.Roles.Add(new IdentityRole() { Name = "Admin" });
-             this.dbContext.SaveChanges();
+           
+            //this.dbContext.Roles.Add(new IdentityRole() { Name = "Admin" });
+            // this.dbContext.SaveChanges();
 
             return View();
         }

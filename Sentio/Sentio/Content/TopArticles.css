@@ -1,0 +1,28 @@
+﻿body {
+}
+
+#topArticles{
+    border: 2px solid grey;
+    padding: 5px;
+    margin: 10px;
+}
+
+#title{
+    font-weight: bold;
+}
+
+#coloredLine{
+    display: block;
+    float: left;
+    width: 80px;
+    height: 2px;
+    color:orangered;
+}
+
+#content{
+    color: grey;
+}
+
+#author{
+    color: grey;
+}
