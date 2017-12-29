@@ -1,24 +1,22 @@
-﻿
-@model IEnumerable<Sentio.Areas.Admin.Models.ArticleViewModel>
+﻿@model IEnumerable<ArticleViewModel>
+@{
+    ViewBag.Title = "AllArticles";
+}
+
+<h2>БИБЛИОТЕКА</h2>
+
 @foreach (var article in @Model)
 {
     <div id="topArticles">
         <div id="title">
             @article.Title.ToUpper()
         </div>
-        @*<div id="coloredLine"></div>*@
         <div id="content">
             @article.Content.Substring(0, 350)
-            @*@Html.ActionLink("[...]", "ArticleDetails", "~/Article", new { id = article.Id})*@
-            <a href="../Article/AllArticles">[...]</a>
+            <a href="ArticleDetails/@article.Id">[...]</a>
         </div>
         <div id="author">
             Автор: @article.Author
         </div>
     </div>
-}
-
-@section styles{
-
-    @Styles.Render("~/Content/css");
 }

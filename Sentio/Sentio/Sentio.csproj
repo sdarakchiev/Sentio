@@ -215,6 +215,7 @@
     <Compile Include="Areas\Admin\Services\ArticleServices.cs" />
     <Compile Include="Areas\Admin\Services\IArticleServices.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -245,6 +246,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Contact.css" />
     <Content Include="Content\Home.css" />
+    <Content Include="Content\sidebar.css" />
     <Content Include="Content\TopArticles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -308,6 +310,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_TopArticles.cshtml" />
+    <Content Include="Views\Article\ArticleDetails.cshtml" />
+    <Content Include="Views\Article\AllArticles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

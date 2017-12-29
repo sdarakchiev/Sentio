@@ -35,6 +35,7 @@ namespace Sentio.Controllers
                 .GetTopArticles(3)
                 .Select(a => new ArticleViewModel()
             {
+                Id = a.Id,
                 Title = a.Title,
                 Content = a.Content,
                 Author = a.Author
@@ -58,6 +59,12 @@ namespace Sentio.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult UserProfile()
+        {
+
+            return this.View();
         }
     }
 }
