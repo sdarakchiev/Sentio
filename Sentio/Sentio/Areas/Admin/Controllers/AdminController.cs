@@ -20,6 +20,7 @@ namespace Sentio.Areas.Admin.Controllers
             this.articleService = articleService;
         }
         // GET: Admin/Admin
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var articles = this.articleService

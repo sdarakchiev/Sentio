@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using Sentio.Areas.Admin.Models;
 using Sentio.Areas.Admin.Services;
+using Sentio.Data.ViewModels;
 using Sentio.Models;
 using System;
 using System.Collections.Generic;
@@ -45,11 +46,15 @@ namespace Sentio.Controllers
             return this.PartialView("_TopArticles", viewModel);
         }
 
-        public ActionResult About()
+        public async Task<ActionResult> About()
         {
            
             //this.dbContext.Roles.Add(new IdentityRole() { Name = "Admin" });
             // this.dbContext.SaveChanges();
+
+            var user = await this.userManager.FindByNameAsync("eva@sentio.bg");
+            await this.userManager.AddToRoleAsync(user.Id, "Admin");
+            this.dbContext.SaveChanges();
 
             return View();
         }
@@ -61,10 +66,15 @@ namespace Sentio.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult UserProfile()
         {
-
-            return this.View();
+            var userName = HttpContext.User.Identity.Name;
+            var viewProfile = new ProfileViewModel()
+            {
+                Username = userName
+            };
+            return this.View(viewProfile);
         }
     }
 }
