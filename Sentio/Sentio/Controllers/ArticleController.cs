@@ -5,6 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Sentio.Data.ViewModels;
+using Sentio.Data.DataModels;
+using Bytes2you.Validation;
 
 namespace Sentio.Controllers
 {
@@ -14,6 +18,8 @@ namespace Sentio.Controllers
 
         public ArticleController(IArticleServices articleService)
         {
+            Guard.WhenArgument(articleService, "articleService").IsNull().Throw();
+
             this.articleService = articleService;
         }
 
@@ -53,5 +59,70 @@ namespace Sentio.Controllers
 
             return this.View(viewModel);
         }
+
+        public ActionResult Search(string query)
+        {
+            var articles = this.articleService.ListAllArticles();
+
+            var result = articles
+                .Select(a => new ArticleViewModel()
+                {
+                    Id = a.Id,
+                    Title = a.Title,
+                    Author = a.Author,
+                    Content = a.Content
+                })
+            .Where(a => a.Title.ToLower() == query.ToLower())
+            .ToList();
+
+            return this.PartialView("_SearchResults", result);
+        }
+
+
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //[Authorize]
+        //public ActionResult Comment(ArticleViewModel viewModel, string content)
+        //{
+        //        var userId = this.User.Identity.GetUserId();
+        //        this.articleService.AddComment(userId, viewModel.CommentContent, viewModel.Id);
+
+
+        //    return this.PartialView("_CommentPartial", viewModel);
+        //}
+
+        public ActionResult Comment(int articleId)
+        {
+            var viewModel = new ArticleViewModel();
+            viewModel.Id = articleId;
+
+            return this.PartialView("_CommentPartial", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Comment(Comment comment)
+        {
+            this.articleService.AddComment(comment.UserId, comment.Content, comment.ArticleId);
+
+            return RedirectToAction("ArticleDetails", new { id = comment.ArticleId });
+        }
+
+        //[HttpPost]
+        //public ActionResult Comment(ArticleCommentViewModel viewModel)
+        //{
+        //    this.articleService.AddComment(viewModel.UserId, viewModel.Content, viewModel.ArticleId);
+
+        //    return this.PartialView("_CommentContent", viewModel);
+        //}
+
+        //[HttpPost]
+        //public ActionResult Comment(string content)
+        //{
+        //    var comments = new List<string>();
+        //    comments.Add(content);
+        //    //return this.Content(content);
+        //    return this.PartialView("_CommentContent", comments);
+        //}
     }
 }

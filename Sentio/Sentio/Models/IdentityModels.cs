@@ -28,7 +28,11 @@ namespace Sentio.Models
         {
         }
 
-        public virtual IDbSet<Article>Articles { get; set; }
+        public virtual IDbSet<Article> Articles { get; set; }
+
+        public virtual IDbSet<Like> Likes { get; set; }
+
+        public virtual IDbSet<Comment> Comments { get; set; }
  
         public static ApplicationDbContext Create()
         {

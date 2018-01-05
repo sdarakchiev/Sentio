@@ -7,8 +7,24 @@
     <p class="lead">за преодоляване натрудности и подобряване на живота</p>
 </div>
 
+@using(Ajax.BeginForm("Search", "Article",
+    new AjaxOptions()
+    {
+        UpdateTargetId = "results",
+        InsertionMode = InsertionMode.Replace
+    }))
+{
+<input type="text" name="query" placeholder="Търсене"/>
+<input type="submit" />
+}
+
+<div id="results"></div>
+
 @Html.Action("GetTopArticles")
 
 @section styles{
     @Styles.Render("~/Content/home")
+}
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryajax")
 }

@@ -8,3 +8,24 @@
 <h3>@Model.Author</h3>
 
 <p>@Model.Content</p>
+
+
+@Html.Action("Comment", "Article",  new {articleId = Model.Id })
+
+@*@using (Ajax.BeginForm("Comment",
+                            new AjaxOptions()
+                            {
+                                UpdateTargetId = "comment",
+                                InsertionMode = InsertionMode.Replace
+                            }))
+{
+    <input type="text" name="Content" />
+    <input type="submit" value="Save" />
+}
+
+<div id="comment">
+</div>*@
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryajax")
+}

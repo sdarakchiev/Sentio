@@ -216,6 +216,14 @@
     <Compile Include="Migrations\201712301245468_user-admin.Designer.cs">
       <DependentUpon>201712301245468_user-admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712301529344_Likes Comments.cs" />
+    <Compile Include="Migrations\201712301529344_Likes Comments.Designer.cs">
+      <DependentUpon>201712301529344_Likes Comments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712301544280_Article collections.cs" />
+    <Compile Include="Migrations\201712301544280_Article collections.Designer.cs">
+      <DependentUpon>201712301544280_Article collections.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\ArticleServices.cs" />
     <Compile Include="Services\IArticleServices.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -251,6 +259,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Contact.css" />
     <Content Include="Content\Home.css" />
+    <Content Include="Content\layout.css" />
     <Content Include="Content\sidebar.css" />
     <Content Include="Content\TopArticles.css" />
     <Content Include="favicon.ico" />
@@ -271,6 +280,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -318,6 +329,9 @@
     <Content Include="Views\Article\ArticleDetails.cshtml" />
     <Content Include="Views\Article\AllArticles.cshtml" />
     <Content Include="Views\Home\UserProfile.cshtml" />
+    <Content Include="Views\Shared\_CommentPartial.cshtml" />
+    <Content Include="Views\Shared\_CommentContent.cshtml" />
+    <Content Include="Views\Shared\_SearchResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -349,6 +363,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712301245468_user-admin.resx">
       <DependentUpon>201712301245468_user-admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712301529344_Likes Comments.resx">
+      <DependentUpon>201712301529344_Likes Comments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712301544280_Article collections.resx">
+      <DependentUpon>201712301544280_Article collections.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

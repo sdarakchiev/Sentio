@@ -16,6 +16,8 @@ namespace Sentio.Areas.Admin.Services
 
         public ArticleServices(ApplicationDbContext dbContext)
         {
+            Guard.WhenArgument(dbContext, "dbContext").IsNull().Throw();
+
             this.dbContext = dbContext;
         }
 
@@ -65,6 +67,22 @@ namespace Sentio.Areas.Admin.Services
                 })
                 .Take(count)
                 .ToList();
+        }
+
+        public void AddComment (string userId, string content, int articleId)
+        {
+            var user = this.dbContext.Users.Find(userId);
+            var article = this.dbContext.Articles.Find(articleId);
+
+            Comment comment = new Comment()
+            {
+                UserId = userId,
+                ArticleId = articleId,
+                Content = content
+            };
+
+            article.Comments.Add(comment);
+            this.dbContext.SaveChanges();
         }
     }
 

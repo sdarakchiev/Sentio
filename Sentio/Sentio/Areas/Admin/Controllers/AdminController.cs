@@ -1,4 +1,5 @@
-﻿using Sentio.Areas.Admin.Models;
+﻿using Bytes2you.Validation;
+using Sentio.Areas.Admin.Models;
 using Sentio.Areas.Admin.Services;
 using Sentio.Data.DataModels;
 using System;
@@ -16,6 +17,9 @@ namespace Sentio.Areas.Admin.Controllers
 
         public AdminController(ApplicationUserManager userManager, IArticleServices articleService)
         {
+            Guard.WhenArgument(userManager, "userManager").IsNull().Throw();
+            Guard.WhenArgument(articleService, "articleService").IsNull().Throw();
+
             this.userManager = userManager;
             this.articleService = articleService;
         }

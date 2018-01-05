@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Bytes2you.Validation;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Sentio.Areas.Admin.Models;
 using Sentio.Areas.Admin.Services;
 using Sentio.Data.ViewModels;
@@ -20,6 +21,10 @@ namespace Sentio.Controllers
 
         public HomeController(ApplicationUserManager userManager, ApplicationDbContext dbContext, IArticleServices articleService)
         {
+            Guard.WhenArgument(userManager, "userManager").IsNull().Throw();
+            Guard.WhenArgument(dbContext, "dbContext").IsNull().Throw();
+            Guard.WhenArgument(articleService, "articleService").IsNull().Throw();
+
             this.userManager = userManager;
             this.dbContext = dbContext;
             this.articleService = articleService;
@@ -30,6 +35,9 @@ namespace Sentio.Controllers
             return View();
         }
 
+
+        [ChildActionOnly]
+        [OutputCache(Duration = 300)]
         public ActionResult GetTopArticles()
         {
             var viewModel = this.articleService
