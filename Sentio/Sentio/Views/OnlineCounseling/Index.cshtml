@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h3>Онлайн консултиране</h3>
+<div>
+    <input id="messageBox" type="text" />
+    <input id="sendButton" type="button" value="Submit message" />
+</div>
+<div id="messages"></div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/signalr")
+    <script src="/signalr/hubs"></script>
+    <script>
+        $(function () {
+            'use strict'
+
+            const chatHub = $.connection.onlineCounseling;
+
+            const newMessageClient = function (message) {
+                $('#messages').append(message + '<br>')
+            }
+
+            const sendMessageClient = function () {
+                const message = $('#messageBox').val()
+                chatHub.server.sendMessage(message)
+            }
+
+            $('#sendButton').click(() => {
+                sendMessageClient()
+            })
+
+            chatHub.client.newMessage = newMessageClient
+
+            $.connection.hub.start()
+        })
+    </script>
+
+}
