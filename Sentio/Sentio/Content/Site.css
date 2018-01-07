@@ -43,3 +43,18 @@ textarea {
         display: block;
         text-align: center;
     }
+
+#chatPage {
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    margin: 20px;
+    padding: 50px;
+    max-width: 540px;
+    min-width: 200px;
+    align-items: center;
+}
+/*#messages {
+    font-family: Helvetica, Arial, sans-serif;
+    display: block;
+    text-align: center;
+}*/

@@ -3,13 +3,19 @@
     ViewBag.Title = "Index";
 }
 
-
-<h3>Онлайн консултиране</h3>
-<div>
-    <input id="messageBox" type="text" />
-    <input id="sendButton" type="button" value="Submit message" />
+<div id="chatPage">
+    <h3>Онлайн консултиране</h3>
+    <div id="inputs">
+        <input id="messageBox" type="text" />
+        <input id="sendButton" type="button" value="Submit message" />
+    </div>
+    <div id="messages"></div>
 </div>
-<div id="messages"></div>
+
+
+@section styles{
+    @Styles.Render("~/Content/home")
+}
 
 @section scripts{
     @Scripts.Render("~/bundles/signalr")

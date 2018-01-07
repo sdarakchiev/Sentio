@@ -39,7 +39,9 @@ namespace Sentio
             bundles.Add(new StyleBundle("~/Content/home").Include(
                        "~/Content/Home.css",
                        "~/Content/About.css",
-                       "~/Content/Contact.css"
+                       "~/Content/Contact.css",
+                       "~/Content/OnlineCounseling.css"
+
                        ));
         }
     }
