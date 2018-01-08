@@ -44,12 +44,13 @@
         </div>
     </div>
    
-        @*@RenderSection("SideBar", required: false)*@
     
     <div class="container body-content">
 
         @RenderBody()
-        
+        @RenderSection("SideBar", required: false)
+
+
         @*<hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Sentio</p>

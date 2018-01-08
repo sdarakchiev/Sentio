@@ -8,33 +8,32 @@
         <h2>ПСИХОЛОГИЧЕСКО КОНСУЛТИРАНЕ, ТРЕНИНГИ И ЛЕКЦИИ</h2>
         <p class="lead">за преодоляване на трудности и подобряване на живота</p>
     </div>
-    <div>
         <div id="homeContent">
             @Html.Action("GetTopArticles")
         </div>
 
+@section SideBar{
         <div id="sideBar">
-            <a href="../Article/AllArticles">БИБЛИОТЕКА</a>
-            <ul>
-                <li><a href="#">Други</a></li>
-                <li><a href="#">Личностно развитие</a></li>
-                <li><a href="#">Връзки, отношения, сексуалност</a></li>
-            </ul>
-            @using (Ajax.BeginForm("Search", "Article",
+    <a href="../Article/AllArticles">БИБЛИОТЕКА</a>
+    <ul>
+        <li><a href="#">Други</a></li>
+        <li><a href="#">Личностно развитие</a></li>
+        <li><a href="#">Връзки, отношения, сексуалност</a></li>
+    </ul>
+    @using (Ajax.BeginForm("Search", "Article",
                         new AjaxOptions()
                         {
                             UpdateTargetId = "results",
                             InsertionMode = InsertionMode.Replace
                         }))
-            {
-                <input type="text" name="query" placeholder="Търсене" />
+    {
+        <input type="text" name="query" placeholder="Търсене" />
                 <input type="submit" />
-            }
-            <div id="results"></div>
-        </div>
-    </div>
+    }
+    <div id="results"></div>
+</div>
 
-
+}
 
 @section styles{
     @Styles.Render("~/Content/css")
