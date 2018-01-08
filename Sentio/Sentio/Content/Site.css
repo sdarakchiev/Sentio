@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    float: left;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -58,3 +59,21 @@ textarea {
     display: block;
     text-align: center;
 }*/
+
+#homeContent {
+    width: 65%;
+    float: left;
+}
+
+#sideBar {
+    width: 30%;
+    float: right;
+    border-left: 1px solid lightgrey;
+    /*border-spacing:20px;*/
+    padding-left: 50px;
+}
+
+    #sideBar a {
+        color: black;
+        font-size: 20px;
+    }

@@ -31,13 +31,14 @@ namespace Sentio
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/TopArticles.css",
-                      "~/Content/layout.css",
-                      "~/Content/sidebar.css"));
+                      "~/Content/Site.css",
+                      "~/Content/layout.css"
+
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/home").Include(
-                       "~/Content/Home.css",
+                      // "~/Content/Home.css",
+                       "~/Content/TopArticles.css",
                        "~/Content/About.css",
                        "~/Content/Contact.css",
                        "~/Content/OnlineCounseling.css"

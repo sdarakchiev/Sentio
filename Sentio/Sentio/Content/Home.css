@@ -2,5 +2,20 @@
 }
 
 .jumbotron {
+    width: 100%;
     background-image: url('../../sun-sea-blue.jpg');
 }
+
+#homeContent {
+    width: 65%;
+    float: left;
+}
+
+#sideBar {
+    width: 30%;
+    float: right;
+}
+
+    #sideBar a {
+        font-size: 20px;
+    }

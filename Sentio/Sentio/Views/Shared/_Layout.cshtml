@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/home")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", required: false)
-
 
 </head>
 <body>
@@ -43,21 +43,23 @@
             </div>
         </div>
     </div>
-
-    @*<aside>
-        <h2>БИБЛИОТЕКА</h2>
-    </aside>*@
-
+   
+        @*@RenderSection("SideBar", required: false)*@
+    
     <div class="container body-content">
+
         @RenderBody()
-        <hr />
+        
+        @*<hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Sentio</p>
-        </footer>
+        </footer>*@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+
 </body>
 </html>

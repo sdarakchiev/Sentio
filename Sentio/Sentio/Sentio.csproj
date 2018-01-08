@@ -269,7 +269,6 @@
     <Content Include="Content\Home.css" />
     <Content Include="Content\layout.css" />
     <Content Include="Content\OnlineCounseling.css" />
-    <Content Include="Content\sidebar.css" />
     <Content Include="Content\TopArticles.css" />
     <Content Include="ErrorPages\NotFound.html" />
     <Content Include="favicon.ico" />
