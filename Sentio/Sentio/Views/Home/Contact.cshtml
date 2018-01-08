@@ -1,38 +1,43 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>КОНТАКТИ</h2>
 
-<img id="contactImage" src="../../contact-image.jpg" />
-<div>
-    <img id="icon" src="../../images/phone1.png" />
-    +359878268696
-</div>
-<div>
-    <img id="icon" src="../../images/email1.png" />
-    eva@sentio.bg
-</div>
-<p>
-    <span>Работно време:</span> От понеделник до петък – 09.00 до 20.00ч.
-</p>
-<p id="note">
-    *В събота, неделя, празнични и почивни дни – по предварителна уговорка.
-</p>
-<p>
-    <span>Адрес:</span> Сесиите се провеждат на две места в София, в тихи и дискретни пространства. Допълнителна информация за локациите ще получите при първоначално записване на час.
-</p>
-<p>
-    <span>Искате ли заедно да разглеждаме темите, които са важни и интересни за вас? Помислете за нещата, които бихте искали да научите и четете.</span>
-</p>
-<p>
-    Ще се радвам да споделяте вашите предложения за статии и практически сесии на email: eva@sentio.bg.
-</p>
-<p id="counselingLink">
-    @Html.ActionLink("Онлайн консултиране", "Index", "OnlineCounseling", null, new {@style = "font-size: 20px" } )
-</p>
+<div id="contacts">
+    <h2>КОНТАКТИ</h2>
 
+    <img id="contactImage" src="../../contact-image.jpg" />
+    <div>
+        <img id="icon" src="../../images/phone1.png" />
+        +359878268696
+    </div>
+    <div>
+        <img id="icon" src="../../images/email1.png" />
+        eva@sentio.bg
+    </div>
+    <p>
+        <span>Работно време:</span> От понеделник до петък – 09.00 до 20.00ч.
+    </p>
+    <p id="note">
+        *В събота, неделя, празнични и почивни дни – по предварителна уговорка.
+    </p>
+    <p>
+        <span>Адрес:</span> Сесиите се провеждат на две места в София, в тихи и дискретни пространства. Допълнителна информация за локациите ще получите при първоначално записване на час.
+    </p>
+    <p>
+        <span>Искате ли заедно да разглеждаме темите, които са важни и интересни за вас? Помислете за нещата, които бихте искали да научите и четете.</span>
+    </p>
+    <p>
+        Ще се радвам да споделяте вашите предложения за статии и практически сесии на email: eva@sentio.bg.
+    </p>
+    <p id="counselingLink">
+        @Html.ActionLink("Онлайн консултиране", "Index", "OnlineCounseling", null, new { @style = "font-size: 20px" })
+    </p>
+</div>
 @*@Html.Partial("_OnlineCounseling")*@
 
+@Html.Partial("_SideBar")
+
+
 @section styles{
-    @Styles.Render("~/Content/home")
+    @Styles.Render("~/Content/css")
 }

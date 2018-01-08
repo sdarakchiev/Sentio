@@ -346,6 +346,7 @@
     <Content Include="Views\Shared\_SearchResults.cshtml" />
     <Content Include="Views\Shared\_OnlineCounseling.cshtml" />
     <Content Include="Views\OnlineCounseling\Index.cshtml" />
+    <Content Include="Views\Shared\_SideBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,6 +1,11 @@
 ﻿body {
 }
 
+#contacts{
+    width:65%;
+    float:left;
+}
+
 #icon{
     height: 20px;
     width: 20px;

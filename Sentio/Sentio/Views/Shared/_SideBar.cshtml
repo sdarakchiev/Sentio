@@ -1,0 +1,27 @@
+﻿<div id="sideBar">
+    <a href="../Article/AllArticles">БИБЛИОТЕКА</a>
+    <ul>
+        <li><a href="#">Други</a></li>
+        <li><a href="#">Личностно развитие</a></li>
+        <li><a href="#">Връзки, отношения, сексуалност</a></li>
+    </ul>
+    @using (Ajax.BeginForm("Search", "Article",
+                                new AjaxOptions()
+                                {
+                                    UpdateTargetId = "results",
+                                    InsertionMode = InsertionMode.Replace
+                                }))
+    {
+        <input type="text" name="query" placeholder="Търсене" />
+        <input type="submit" />
+    }
+    <div id="results"></div>
+</div>
+
+@section styles{
+    @Styles.Render("~/Content/css")
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryajax")
+}

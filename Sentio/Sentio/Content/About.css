@@ -1,6 +1,11 @@
 ﻿body {
 }
 
+#info{
+    width:65%;
+    float:left;
+}
+
 img{
     float: right;
 }
