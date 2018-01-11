@@ -29,7 +29,8 @@ namespace Sentio.Tests.Web.Controllers.ArticleControllerTests
                 new Article() {Id = 1}
             };
 
-            articleServiceMock.Setup(m => m.ListAllArticles()).Returns(articles);
+            var articlesSetMock = new Mock<DbSet<Article>>().SetupData(articles);
+            articleServiceMock.Setup(m => m.ListAllArticles()).Returns(articlesSetMock.Object);
 
             //var model = new List<ArticleViewModel>();
             var controller = new ArticleController(articleServiceMock.Object);
