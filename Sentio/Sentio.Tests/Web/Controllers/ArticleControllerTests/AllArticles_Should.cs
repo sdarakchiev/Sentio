@@ -32,7 +32,7 @@ namespace Sentio.Tests.Web.Controllers.ArticleControllerTests
             var articlesSetMock = new Mock<DbSet<Article>>().SetupData(articles);
             articleServiceMock.Setup(m => m.ListAllArticles()).Returns(articlesSetMock.Object);
 
-            //var model = new List<ArticleViewModel>();
+            //var model = articles.Select(a => new ArticleViewModel() { Id = 1 });
             var controller = new ArticleController(articleServiceMock.Object);
 
             // Act & Assert

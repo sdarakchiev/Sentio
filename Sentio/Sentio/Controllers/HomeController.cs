@@ -4,6 +4,7 @@ using Sentio.Areas.Admin.Models;
 using Sentio.Areas.Admin.Services;
 using Sentio.Data.ViewModels;
 using Sentio.Models;
+using Sentio.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace Sentio.Controllers
         private readonly ApplicationUserManager userManager;
         private readonly ApplicationDbContext dbContext;
         private readonly IArticleServices articleService;
+        private readonly IProfileServices profileService;
 
         public HomeController(ApplicationUserManager userManager, ApplicationDbContext dbContext, IArticleServices articleService)
         {
@@ -78,11 +80,18 @@ namespace Sentio.Controllers
         public ActionResult UserProfile()
         {
             var userName = HttpContext.User.Identity.Name;
+
             var viewProfile = new ProfileViewModel()
             {
                 Username = userName
             };
             return this.View(viewProfile);
+        }
+
+        [Authorize]
+        public ActionResult FavoriteArticles(ProfileViewModel viewModel)
+        {
+            return PartialView(viewModel);
         }
     }
 }

@@ -19,6 +19,9 @@ namespace Sentio.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public ICollection<Article> FavoriteArticles { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

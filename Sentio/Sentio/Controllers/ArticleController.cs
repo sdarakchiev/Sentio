@@ -9,12 +9,14 @@ using Microsoft.AspNet.Identity;
 using Sentio.Data.ViewModels;
 using Sentio.Data.DataModels;
 using Bytes2you.Validation;
+using Sentio.Services;
 
 namespace Sentio.Controllers
 {
     public class ArticleController : Controller
     {
         private readonly IArticleServices articleService;
+        private readonly IProfileServices profileService;
 
         public ArticleController(IArticleServices articleService)
         {
@@ -101,12 +103,15 @@ namespace Sentio.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Comment(Comment comment)
         {
             this.articleService.AddComment(comment.UserId, comment.Content, comment.ArticleId);
 
             return RedirectToAction("ArticleDetails", new { id = comment.ArticleId });
         }
+
+       
 
         //[HttpPost]
         //public ActionResult Comment(ArticleCommentViewModel viewModel)
