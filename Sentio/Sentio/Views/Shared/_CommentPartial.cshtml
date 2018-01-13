@@ -17,7 +17,8 @@
 {
     @Html.AntiForgeryToken()
     <div>
-        @Html.TextAreaFor(m => m.CommentContent, "Comment: ")
+        @Html.HiddenFor(m => m.CommentViewModel.ArticleId)
+        @Html.TextAreaFor(m => m.CommentViewModel.Content, "Comment: ")
     </div>
 
     <div>

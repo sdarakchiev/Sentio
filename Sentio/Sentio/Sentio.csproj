@@ -232,10 +232,6 @@
     <Compile Include="Migrations\201712301544280_Article collections.Designer.cs">
       <DependentUpon>201712301544280_Article collections.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801111601458_favorite articles.cs" />
-    <Compile Include="Migrations\201801111601458_favorite articles.Designer.cs">
-      <DependentUpon>201801111601458_favorite articles.cs</DependentUpon>
-    </Compile>
     <Compile Include="Services\ArticleServices.cs" />
     <Compile Include="Services\IArticleServices.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -347,12 +343,10 @@
     <Content Include="Views\Article\AllArticles.cshtml" />
     <Content Include="Views\Home\UserProfile.cshtml" />
     <Content Include="Views\Shared\_CommentPartial.cshtml" />
-    <Content Include="Views\Shared\_CommentContent.cshtml" />
     <Content Include="Views\Shared\_SearchResults.cshtml" />
     <Content Include="Views\Shared\_OnlineCounseling.cshtml" />
     <Content Include="Views\OnlineCounseling\Index.cshtml" />
     <Content Include="Views\Shared\_SideBar.cshtml" />
-    <Content Include="Views\Article\AddToFavorites.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -390,9 +384,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712301544280_Article collections.resx">
       <DependentUpon>201712301544280_Article collections.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801111601458_favorite articles.resx">
-      <DependentUpon>201801111601458_favorite articles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

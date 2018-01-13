@@ -1,4 +1,5 @@
 ﻿using Sentio.Data.DataModels;
+using Sentio.Data.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -26,7 +27,9 @@ namespace Sentio.Areas.Admin.Models
 
         public ICollection<Like> Likes { get; set; }
 
-        public ICollection<Comment> Comments { get; set; }
+        public ArticleCommentViewModel CommentViewModel { get; set; }
+
+        public ICollection<ArticleCommentViewModel> Comments { get; set; }
 
     }
 }

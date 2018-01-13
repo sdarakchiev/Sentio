@@ -74,60 +74,25 @@ namespace Sentio.Controllers
                     Author = a.Author,
                     Content = a.Content
                 })
-            .Where(a => a.Title.ToLower() == query.ToLower())
+            .Where(a => a.Title.ToLower().Contains(query.ToLower()))
             .ToList();
 
             return this.PartialView("_SearchResults", result);
         }
 
-
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //[Authorize]
-        //public ActionResult Comment(ArticleViewModel viewModel, string content)
-        //{
-        //        var userId = this.User.Identity.GetUserId();
-        //        this.articleService.AddComment(userId, viewModel.CommentContent, viewModel.Id);
-
-
-        //    return this.PartialView("_CommentPartial", viewModel);
-        //}
-
-        public ActionResult Comment(int articleId)
-        {
-            var viewModel = new ArticleViewModel();
-            viewModel.Id = articleId;
-
-            return this.PartialView("_CommentPartial", viewModel);
-        }
-
         [HttpPost]
         [Authorize]
-        public ActionResult Comment(Comment comment)
+        [ValidateAntiForgeryToken]
+        public ActionResult Comment (ArticleViewModel viewModel)
         {
-            this.articleService.AddComment(comment.UserId, comment.Content, comment.ArticleId);
+            if (this.ModelState.IsValid)
+            {
+                this.articleService.AddComment(viewModel.CommentViewModel.ArticleId, viewModel.CommentViewModel.Content);
+                return this.PartialView("_CommentPartial", viewModel);
 
-            return RedirectToAction("ArticleDetails", new { id = comment.ArticleId });
+            }
+            return this.RedirectToAction("AllArticles");
+
         }
-
-       
-
-        //[HttpPost]
-        //public ActionResult Comment(ArticleCommentViewModel viewModel)
-        //{
-        //    this.articleService.AddComment(viewModel.UserId, viewModel.Content, viewModel.ArticleId);
-
-        //    return this.PartialView("_CommentContent", viewModel);
-        //}
-
-        //[HttpPost]
-        //public ActionResult Comment(string content)
-        //{
-        //    var comments = new List<string>();
-        //    comments.Add(content);
-        //    //return this.Content(content);
-        //    return this.PartialView("_CommentContent", comments);
-        //}
     }
 }

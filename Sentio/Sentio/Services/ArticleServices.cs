@@ -69,14 +69,11 @@ namespace Sentio.Areas.Admin.Services
                 .ToList();
         }
 
-        public void AddComment (string userId, string content, int articleId)
+        public void AddComment(int articleId, string content)
         {
-            var user = this.dbContext.Users.Find(userId);
-            var article = this.dbContext.Articles.Find(articleId);
-
+            var article = this.dbContext.Articles.First(a => a.Id == articleId);
             Comment comment = new Comment()
             {
-                UserId = userId,
                 ArticleId = articleId,
                 Content = content
             };
@@ -84,6 +81,7 @@ namespace Sentio.Areas.Admin.Services
             article.Comments.Add(comment);
             this.dbContext.SaveChanges();
         }
+
     }
 
 

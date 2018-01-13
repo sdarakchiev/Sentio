@@ -20,6 +20,6 @@ namespace Sentio.Areas.Admin.Services
 
         IEnumerable<ArticleModel> GetTopArticles(int count);
 
-        void AddComment(string userId, string content, int articleId);
+        void AddComment(int articleId, string content);
     }
 }
