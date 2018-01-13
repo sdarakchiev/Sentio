@@ -80,19 +80,33 @@ namespace Sentio.Controllers
             return this.PartialView("_SearchResults", result);
         }
 
+        public ActionResult Comment(int articleId)
+        {
+            var comments = this.articleService.AllComments(articleId);
+
+            var viewModel = comments
+                .Select(c => new ArticleViewModel()
+                {
+                    Id = articleId,
+                    CommentViewModel = new ArticleCommentViewModel()
+                    {
+                        ArticleId = c.ArticleId,
+                        Content = c.Content
+                    }
+                })
+            .ToList();
+
+            return this.PartialView(viewModel);
+        }
+
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Comment (ArticleViewModel viewModel)
+        public ActionResult Comment(ArticleViewModel viewModel)
         {
-            if (this.ModelState.IsValid)
-            {
-                this.articleService.AddComment(viewModel.CommentViewModel.ArticleId, viewModel.CommentViewModel.Content);
-                return this.PartialView("_CommentPartial", viewModel);
+            this.articleService.AddComment(viewModel.CommentViewModel.ArticleId, viewModel.CommentViewModel.Content);
 
-            }
-            return this.RedirectToAction("AllArticles");
-
+            return this.PartialView("_CommentPartial", viewModel);
         }
     }
 }

@@ -1,18 +1,6 @@
 ﻿@model ArticleViewModel
     <h4>Comments</h4>
 
-@*<div>
-    @if (Model.Comments != null)
-    {
-        foreach (var comment in Model.Comments)
-        {
-            <div>@comment.Content</div>
-            //user
-        }
-    }
-
-</div>*@
-
 @using (Html.BeginForm("Comment", "Article",  FormMethod.Post))
 {
     @Html.AntiForgeryToken()
