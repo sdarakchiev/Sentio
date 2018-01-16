@@ -6,6 +6,7 @@ using Sentio.Areas.Admin.Models;
 using Sentio.Areas.Admin.Services;
 using Sentio.Data.DataModels;
 using Sentio.Models;
+using Sentio.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace Sentio.Tests.Web.Areas.Admin.Controllers.AdminControllerTests
             var userStore = new Mock<UserStore<ApplicationUser>>();
             var applicationUserManagerMock = new Mock<ApplicationUserManager>(userStore.Object);
             var articleServiceMock = new Mock<IArticleServices>();
+            var eventServiceMock = new Mock<IEventService>();
 
             //var author = "author";
             //var title = "title";
@@ -60,7 +62,7 @@ namespace Sentio.Tests.Web.Areas.Admin.Controllers.AdminControllerTests
 
             //articleServiceMock.Setup(m => m.ListAllArticles()).Returns(articles);
 
-            var controller = new AdminController(applicationUserManagerMock.Object, articleServiceMock.Object);
+            var controller = new AdminController(applicationUserManagerMock.Object, articleServiceMock.Object, eventServiceMock.Object);
 
             // Act & Assert
             controller

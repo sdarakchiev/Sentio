@@ -88,10 +88,25 @@ namespace Sentio.Controllers
             return this.View(viewProfile);
         }
 
-        [Authorize]
-        public ActionResult FavoriteArticles(ProfileViewModel viewModel)
+        public ActionResult UserEvents()
         {
-            return PartialView(viewModel);
+            var userName = HttpContext.User.Identity.Name;
+
+            this.profileService.EventsForUser(userName);
+
+            var viewModel = this.profileService
+                .EventsForUser(userName)
+                .Select(e => new EventViewModel()
+                {
+                    Id = e.Id,
+                    Name = e.Name,
+                    Description = e.Description
+                })
+                .ToList();
+
+            return this.PartialView(viewModel);
         }
+
+       
     }
 }

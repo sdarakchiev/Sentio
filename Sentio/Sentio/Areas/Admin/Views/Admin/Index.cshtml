@@ -1,32 +1,37 @@
 ﻿@model Sentio.Areas.Admin.Models.ArticleContainerViewModel
 
-@{ 
+@{
     ViewBag.Title = "Articles";
 }
 
+<h3>Добавяне на статия</h3>
+
 @using (Html.BeginForm("Index", "Admin", FormMethod.Post))
 {
-    @Html.AntiForgeryToken()
+    <div id="create-article">
+        @Html.AntiForgeryToken()
 
-    <div>
-        @Html.LabelFor(m => m.CreateArticle.Author, "Author:")
-        @Html.EditorFor(m => m.CreateArticle.Author)
-        @Html.ValidationMessageFor(m => m.CreateArticle.Author)
-    </div>
-    <div>
-        @Html.LabelFor(m => m.CreateArticle.Title, "Title:")
-        @Html.EditorFor(m => m.CreateArticle.Title)
-        @Html.ValidationMessageFor(m => m.CreateArticle.Title)
-    </div>
-    <div>
-        @Html.LabelFor(m => m.CreateArticle.Content, "Content:")
-        @Html.TextAreaFor(m => m.CreateArticle.Content)
-        @Html.ValidationMessageFor(m => m.CreateArticle.Content)
+        <div id="author-form">
+            @Html.LabelFor(m => m.CreateArticle.Author, "Author:")
+            @Html.EditorFor(m => m.CreateArticle.Author)
+            @Html.ValidationMessageFor(m => m.CreateArticle.Author)
+        </div>
+        <div id="title-form">
+            @Html.LabelFor(m => m.CreateArticle.Title, "Title:")
+            @Html.EditorFor(m => m.CreateArticle.Title)
+            @Html.ValidationMessageFor(m => m.CreateArticle.Title)
+        </div>
+        <div id="content-form">
+            @Html.LabelFor(m => m.CreateArticle.Content, "Content:")
+            @Html.TextAreaFor(m => m.CreateArticle.Content)
+            @Html.ValidationMessageFor(m => m.CreateArticle.Content)
+        </div>
+
+        <div>
+            <input type="submit" value="Save" />
+        </div>
     </div>
 
-    <div>
-        <input type="submit" value="Save" />
-    </div>
 }
 
 <h2>Articles</h2>
@@ -34,24 +39,29 @@
 {
     foreach (var article in @Model.Articles)
     {
-        <div>
-            Author: @article.Author
-        </div>
-        <div>
-            Title: @article.Title
-        </div>
-
-        
-        using (Html.BeginForm("DeleteArticle", "Admin", new { id = article.Id }, FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
-            <div>
-                <input type="submit" class="button" value="Delete" />
+        <div id="manage-article">
+            <div id="author">
+                Author: @article.Author
             </div>
-        }
-
+            <div id="title">
+                Title: @article.Title
+            </div>
+            @using (Html.BeginForm("DeleteArticle", "Admin", new { id = article.Id }, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div id="save-button">
+                    <input type="submit" class="button" value="Delete" />
+                </div>
+            }
+        </div>
     }
 }
+
+<p id="event-link">
+    @Html.ActionLink("Създaване на събитие", "CreateEvent", "Admin", null, new { @style = "font-size: 20px" })
+</p>
+
+
 
 @section scripts {
     @Scripts.Render("~/bundles/jqueryval")

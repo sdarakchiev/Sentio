@@ -1,0 +1,31 @@
+﻿@model EventViewModel
+@{
+    ViewBag.Title = "CreateEvent";
+}
+
+<h2>Създаване на събитие</h2>
+
+@using (Html.BeginForm("CreateEvent", "Admin", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.LabelFor(m => m.Name, "Name:")
+        @Html.EditorFor(m => m.Name)
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Description, "Description:")
+        @Html.EditorFor(m => m.Description)
+        @Html.ValidationMessageFor(m => m.Description)
+    </div>
+    
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

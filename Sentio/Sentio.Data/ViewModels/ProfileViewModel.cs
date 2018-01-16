@@ -11,6 +11,6 @@ namespace Sentio.Data.ViewModels
     {
         public string Username { get; set; }
 
-        public ICollection<Article> FavoriteArticles { get; set; }
+        public ICollection<EventViewModel> Events { get; set; }
     }
 }

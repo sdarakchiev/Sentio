@@ -24,10 +24,6 @@ textarea {
     max-width: 280px;
 }
 
-.navbar-header {
-    background-color: moccasin;
-}
-
 #error-content {
     border: 2px solid grey;
     border-radius: 5px;
@@ -121,4 +117,8 @@ span {
 
 .counselingLink {
     font-size: 20px;
+}
+
+#results{
+    margin-bottom:30px;
 }

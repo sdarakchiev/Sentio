@@ -2,6 +2,8 @@
 using Sentio.Areas.Admin.Models;
 using Sentio.Areas.Admin.Services;
 using Sentio.Data.DataModels;
+using Sentio.Data.ViewModels;
+using Sentio.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +16,17 @@ namespace Sentio.Areas.Admin.Controllers
     {
         private readonly ApplicationUserManager userManager;
         private readonly IArticleServices articleService;
+        private readonly IEventService eventService;
 
-        public AdminController(ApplicationUserManager userManager, IArticleServices articleService)
+        public AdminController(ApplicationUserManager userManager, IArticleServices articleService, IEventService eventService)
         {
             Guard.WhenArgument(userManager, "userManager").IsNull().Throw();
             Guard.WhenArgument(articleService, "articleService").IsNull().Throw();
+            Guard.WhenArgument(eventService, "eventService").IsNull().Throw();
 
             this.userManager = userManager;
             this.articleService = articleService;
+            this.eventService = eventService;
         }
         // GET: Admin/Admin
         [Authorize(Roles = "Admin")]
@@ -96,6 +101,25 @@ namespace Sentio.Areas.Admin.Controllers
             this.articleService.DeleteArticle(article);
 
             return this.RedirectToAction("Index");
+        }
+
+        public ActionResult CreateEvent()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateEvent(EventViewModel viewModel)
+        {
+            if (this.ModelState.IsValid)
+            {
+                this.eventService.CreateEvent(viewModel.Name, viewModel.Description);
+
+                return this.RedirectToAction("CreateEvent");
+            }
+
+            return this.View(viewModel);
         }
     }
 }

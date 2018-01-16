@@ -9,11 +9,11 @@
 
 <p>@Model.Content</p>
 
+@*@Html.Action("Comment", "Article", new { articleId = Model.Id })*@
 
 
 @if(User.Identity.IsAuthenticated)
 {
-@*@Html.Action("Comment", "Article", new { articleId = Model.Id })*@
 @Html.Partial("_CommentPartial")
 }
 

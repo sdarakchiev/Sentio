@@ -1,0 +1,31 @@
+﻿body {
+}
+
+#create-article {
+    border-bottom: 1px solid lightgrey;
+    padding: 10px;
+    margin 10px;
+}
+
+#author-form{
+    margin:10px;
+}
+
+#title-form {
+    margin: 10px;
+}
+
+#content-form {
+    margin: 10px;
+}
+
+#manage-article{
+    display:block;
+    border-bottom: 1px solid lightgrey;
+    padding: 10px;
+    margin 10px;
+}
+
+#event-link{
+    margin: 30px;
+}

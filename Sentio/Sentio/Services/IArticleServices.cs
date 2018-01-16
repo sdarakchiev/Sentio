@@ -21,5 +21,7 @@ namespace Sentio.Areas.Admin.Services
         IEnumerable<ArticleModel> GetTopArticles(int count);
 
         void AddComment(int articleId, string content);
+
+        //IEnumerable<Comment> AllComments(int articleId);
     }
 }

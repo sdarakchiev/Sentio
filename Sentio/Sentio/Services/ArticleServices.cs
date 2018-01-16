@@ -71,16 +71,25 @@ namespace Sentio.Areas.Admin.Services
 
         public void AddComment(int articleId, string content)
         {
-            var article = this.dbContext.Articles.First(a => a.Id == articleId);
+            //var article = this.dbContext.Articles.First(a => a.Id == articleId);
             Comment comment = new Comment()
             {
                 ArticleId = articleId,
                 Content = content
             };
+            //article.Comments.Add(comment);
 
-            article.Comments.Add(comment);
+
+            this.dbContext.Comments.Add(comment);
             this.dbContext.SaveChanges();
         }
+
+        //public IEnumerable<Comment> AllComments (int articleId)
+        //{
+        //    var article = this.dbContext.Articles.First(a => a.Id == articleId);
+
+        //    return article.Comments.ToList();
+        //}
 
     }
 

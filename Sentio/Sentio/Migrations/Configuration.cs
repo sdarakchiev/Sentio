@@ -2,6 +2,7 @@ namespace Sentio.Migrations
 {
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using Sentio.Data.DataModels;
     using Sentio.Models;
     using System;
     using System.Data.Entity;

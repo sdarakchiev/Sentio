@@ -218,7 +218,9 @@
     <Compile Include="Areas\Admin\Models\ArticleContainerViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ArticleViewModel.cs" />
     <Compile Include="Areas\Admin\Models\DeleteArticleViewModel.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\OnlineCounselingController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Hubs\OnlineCounseling.cs" />
     <Compile Include="Migrations\201712301245468_user-admin.cs" />
     <Compile Include="Migrations\201712301245468_user-admin.Designer.cs">
@@ -232,7 +234,12 @@
     <Compile Include="Migrations\201712301544280_Article collections.Designer.cs">
       <DependentUpon>201712301544280_Article collections.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801141608576_Events.cs" />
+    <Compile Include="Migrations\201801141608576_Events.Designer.cs">
+      <DependentUpon>201801141608576_Events.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\ArticleServices.cs" />
+    <Compile Include="Services\EventService.cs" />
     <Compile Include="Services\IArticleServices.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
@@ -258,12 +265,14 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IEventService.cs" />
     <Compile Include="Services\IProfileServices.cs" />
     <Compile Include="Services\ProfileServices.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\About.css" />
+    <Content Include="Content\admin.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Contact.css" />
@@ -286,6 +295,7 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\DeleteArticle.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\CreateEvent.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -341,12 +351,16 @@
     <Content Include="Views\Shared\_TopArticles.cshtml" />
     <Content Include="Views\Article\ArticleDetails.cshtml" />
     <Content Include="Views\Article\AllArticles.cshtml" />
-    <Content Include="Views\Home\UserProfile.cshtml" />
+    <Content Include="Views\Profile\UserProfile.cshtml" />
     <Content Include="Views\Shared\_CommentPartial.cshtml" />
     <Content Include="Views\Shared\_SearchResults.cshtml" />
     <Content Include="Views\Shared\_OnlineCounseling.cshtml" />
     <Content Include="Views\OnlineCounseling\Index.cshtml" />
     <Content Include="Views\Shared\_SideBar.cshtml" />
+    <Content Include="Views\Article\Comment.cshtml" />
+    <Content Include="Views\Event\AllEvents.cshtml" />
+    <Content Include="Views\Event\EventDetails.cshtml" />
+    <Content Include="Views\Profile\UserEvents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -384,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712301544280_Article collections.resx">
       <DependentUpon>201712301544280_Article collections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801141608576_Events.resx">
+      <DependentUpon>201801141608576_Events.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

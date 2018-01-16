@@ -1,0 +1,12 @@
+﻿@model IEnumerable<EventViewModel>
+
+@foreach (var newEvent in Model)
+{
+    <div id="title">
+        @newEvent.Name.ToUpper()
+    </div>
+        <div id="content">
+            @newEvent.Description.Substring(0, 350)
+            <a href="EventDetails/@newEvent.Id">[...]</a>
+        </div>
+}

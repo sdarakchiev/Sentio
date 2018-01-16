@@ -14,6 +14,7 @@ namespace Sentio.App_Start
     using Sentio.Models;
     using Ninject.Web.Common.WebHost;
     using Sentio.Areas.Admin.Services;
+    using Sentio.Services;
 
     public static class NinjectWebCommon 
     {
@@ -79,6 +80,7 @@ namespace Sentio.App_Start
            .InRequestScope();
 
             kernel.Bind<IArticleServices>().To<ArticleServices>();
+            kernel.Bind<IEventService>().To<EventService>();
         }        
     }
 }

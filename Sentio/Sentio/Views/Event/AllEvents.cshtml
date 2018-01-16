@@ -1,0 +1,21 @@
+﻿@model IEnumerable<EventViewModel>
+
+@{
+    ViewBag.Title = "AllEvents";
+}
+
+<h2>СЪБИТИЯ</h2>
+
+@foreach (var eachEvent in @Model)
+{
+    <div id="topArticles">
+        <div id="title">
+            @eachEvent.Name.ToUpper()
+        </div>
+        <div id="content">
+            @eachEvent.Description.Substring(0, 350)
+            <a href="EventDetails/@eachEvent.Id">[...]</a>
+        </div>
+        
+    </div>
+}

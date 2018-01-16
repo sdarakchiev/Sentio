@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sentio.Data.DataModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,8 @@ namespace Sentio.Services
 {
     public interface IProfileServices
     {
+        void JoinEvent(int eventId, string userName);
+
+        IEnumerable<Event> EventsForUser(string userName);
     }
 }
