@@ -351,7 +351,7 @@
     <Content Include="Views\Shared\_TopArticles.cshtml" />
     <Content Include="Views\Article\ArticleDetails.cshtml" />
     <Content Include="Views\Article\AllArticles.cshtml" />
-    <Content Include="Views\Profile\UserProfile.cshtml" />
+    <Content Include="Views\Home\UserProfile.cshtml" />
     <Content Include="Views\Shared\_CommentPartial.cshtml" />
     <Content Include="Views\Shared\_SearchResults.cshtml" />
     <Content Include="Views\Shared\_OnlineCounseling.cshtml" />
@@ -360,10 +360,12 @@
     <Content Include="Views\Article\Comment.cshtml" />
     <Content Include="Views\Event\AllEvents.cshtml" />
     <Content Include="Views\Event\EventDetails.cshtml" />
-    <Content Include="Views\Profile\UserEvents.cshtml" />
+    <Content Include="Views\Home\UserEvents.cshtml" />
+    <Content Include="Views\Shared\_JointEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

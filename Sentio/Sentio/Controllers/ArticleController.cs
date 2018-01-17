@@ -80,24 +80,24 @@ namespace Sentio.Controllers
             return this.PartialView("_SearchResults", result);
         }
 
-        //public ActionResult Comment(int articleId)
-        //{
-        //    var comments = this.articleService.AllComments(articleId);
+        public ActionResult Comment(int articleId)
+        {
+            var comments = this.articleService.AllComments(articleId);
 
-        //    var viewModel = comments
-        //        .Select(c => new ArticleViewModel()
-        //        {
-        //            Id = articleId,
-        //            CommentViewModel = new ArticleCommentViewModel()
-        //            {
-        //                ArticleId = c.ArticleId,
-        //                Content = c.Content
-        //            }
-        //        })
-        //    .ToList();
+            var viewModel = comments
+                .Select(c => new ArticleViewModel()
+                {
+                    Id = articleId,
+                    CommentViewModel = new ArticleCommentViewModel()
+                    {
+                        ArticleId = c.ArticleId,
+                        Content = c.Content
+                    }
+                })
+            .ToList();
 
-        //    return this.PartialView(viewModel);
-        //}
+            return this.PartialView(viewModel);
+        }
 
         [HttpPost]
         [Authorize]

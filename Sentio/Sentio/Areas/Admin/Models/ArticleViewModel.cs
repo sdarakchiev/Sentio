@@ -23,10 +23,6 @@ namespace Sentio.Areas.Admin.Models
         [StringLength(1000, ErrorMessage = "The artile must be between 200 and 1000 symbols", MinimumLength = 200)]
         public string Content { get; set; }
 
-        public string CommentContent { get; set; }
-
-        public ICollection<Like> Likes { get; set; }
-
         public ArticleCommentViewModel CommentViewModel { get; set; }
 
         public ICollection<ArticleCommentViewModel> Comments { get; set; }

@@ -22,6 +22,6 @@ namespace Sentio.Areas.Admin.Services
 
         void AddComment(int articleId, string content);
 
-        //IEnumerable<Comment> AllComments(int articleId);
+        IEnumerable<Comment> AllComments(int articleId);
     }
 }
