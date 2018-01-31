@@ -79,8 +79,6 @@ namespace Sentio.Areas.Admin.Services
             };
             article.Comments.Add(comment);
 
-
-            //this.dbContext.Comments.Add(comment);
             this.dbContext.SaveChanges();
         }
 

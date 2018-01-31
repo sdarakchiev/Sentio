@@ -60,9 +60,13 @@ namespace Sentio.Controllers
         public ActionResult JoinEvent(int eventId)
         {
             var userName = this.User.Identity.Name;
-            this.profileService.JoinEvent(eventId, userName);
+            if(this.ModelState.IsValid)
+            {
+                this.profileService.JoinEvent(eventId, userName);
 
-            return this.RedirectToAction("AllEvents", "Event");
+                return this.RedirectToAction("AllEvents", "Event");
+            }
+            return this.PartialView("_JoinEvent");
         }
     }
 }

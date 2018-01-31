@@ -24,12 +24,12 @@
             </div>
             <div class="navbar-collapse collapse" >
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Начало", "Index", "Home")</li>
-                    <li>@Html.ActionLink("За мен", "About", "Home")</li>
-                    <li>@Html.ActionLink("Контакти", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Начало", "Index", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("За мен", "About", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Контакти", "Contact", "Home", new { area = "" }, null)</li>
                 @if (this.User.Identity.IsAuthenticated)
                 {
-                     <li>@Html.ActionLink("Profle", "UserProfile", "Home")</li>
+                     <li>@Html.ActionLink("Profle", "UserProfile", "Home", new { area = "" }, null)</li>
                 }
                 @if (this.User.IsInRole("Admin"))
                 {

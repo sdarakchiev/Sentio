@@ -29,9 +29,13 @@
     <p>
         Ще се радвам да споделяте вашите предложения за статии и практически сесии на email: eva@sentio.bg.
     </p>
-    <p id="counselingLink">
-        @Html.ActionLink("Онлайн консултиране", "Index", "OnlineCounseling", null, new { @style = "font-size: 20px" })
-    </p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p id="counselingLink">
+            @Html.ActionLink("Онлайн консултиране", "Index", "OnlineCounseling", null, new { @style = "font-size: 20px" })
+        </p>
+    }
+   
 </div>
 @*@Html.Partial("_OnlineCounseling")*@
 

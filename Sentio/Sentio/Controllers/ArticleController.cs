@@ -40,7 +40,11 @@ namespace Sentio.Controllers
                 Id = article.Id,
                 Author = article.Author,
                 Title = article.Title,
-                Content = article.Content
+                Content = article.Content,
+                CommentViewModel = new ArticleCommentViewModel()
+                {
+                    ArticleId = article.Id
+                }
             };
 
             return this.View(viewModel);

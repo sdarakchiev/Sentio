@@ -8,6 +8,12 @@ namespace Sentio.Data.DataModels
 {
     public class Article
     {
+        public Article()
+        {
+            this.Likes = new HashSet<Like>();
+            this.Comments = new HashSet<Comment>();
+        }
+
         public int Id { get; set; }
 
         public string Author { get; set; }
@@ -16,8 +22,8 @@ namespace Sentio.Data.DataModels
 
         public string Content { get; set; }
         
-        public ICollection<Like> Likes { get; set; }
+        public virtual ICollection<Like> Likes { get; set; }
 
-        public ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

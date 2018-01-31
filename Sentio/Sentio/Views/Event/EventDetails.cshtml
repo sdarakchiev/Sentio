@@ -7,4 +7,11 @@
 
 <p>@Model.Description</p>
 
-@Html.Partial("_JoinEvent")
+@if (User.Identity.IsAuthenticated)
+{
+    <div>
+        <input type="button" value="Join" />
+    </div>
+}
+
+@*@Html.Partial("_JoinEvent")*@

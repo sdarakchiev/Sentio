@@ -9,6 +9,7 @@ namespace Sentio.Controllers
     public class OnlineCounselingController : Controller
     {
         // GET: OnlineCounseling
+        [Authorize]
         public ActionResult Index()
         {
             return View();

@@ -12,6 +12,7 @@ using System.Web.Mvc;
 
 namespace Sentio.Areas.Admin.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class AdminController : Controller
     {
         private readonly ApplicationUserManager userManager;
@@ -29,7 +30,6 @@ namespace Sentio.Areas.Admin.Controllers
             this.eventService = eventService;
         }
         // GET: Admin/Admin
-        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var articles = this.articleService
