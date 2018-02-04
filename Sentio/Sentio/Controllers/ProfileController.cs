@@ -57,12 +57,13 @@ namespace Sentio.Controllers
             return this.PartialView(viewModel);
         }
 
-        public ActionResult JoinEvent(int eventId)
+        public ActionResult JoinEvent(EventViewModel viewModel)
         {
             var userName = this.User.Identity.Name;
+
             if(this.ModelState.IsValid)
             {
-                this.profileService.JoinEvent(eventId, userName);
+                this.profileService.JoinEvent(viewModel.Id, userName);
 
                 return this.RedirectToAction("AllEvents", "Event");
             }

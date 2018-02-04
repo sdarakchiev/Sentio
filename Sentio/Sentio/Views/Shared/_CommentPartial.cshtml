@@ -4,7 +4,7 @@
 @using (Html.BeginForm("Comment", "Article",  FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    <div>
+    <div id="comment-box">
         @Html.HiddenFor(m => m.CommentViewModel.ArticleId)
         @Html.TextAreaFor(m => m.CommentViewModel.Content, "Comment: ")
     </div>
@@ -12,4 +12,12 @@
     <div>
         <input type="submit" value="Save" />
     </div>
+}
+
+@foreach (var comment in Model.Comments)
+{
+    <div id="comments">
+        <p>@comment.Content</p>
+    </div>
+   
 }

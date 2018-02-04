@@ -1,8 +1,14 @@
-﻿@model ProfileViewModel
+﻿@model EventViewModel
 
 @if (User.Identity.IsAuthenticated)
 {
-    <div>
-        <input type="button" value="Join" />
-    </div>
+    using (Html.BeginForm("JoinEvent", "Profile", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.Id)
+
+        <div>
+            <input type="button" value="Join" />
+        </div>
+    }
+
 }

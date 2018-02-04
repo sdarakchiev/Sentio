@@ -44,7 +44,8 @@ namespace Sentio.Controllers
                 CommentViewModel = new ArticleCommentViewModel()
                 {
                     ArticleId = article.Id
-                }
+                },
+                Comments = article.Comments
             };
 
             return this.View(viewModel);
@@ -100,7 +101,7 @@ namespace Sentio.Controllers
                 })
             .ToList();
 
-            return this.PartialView(viewModel);
+            return this.PartialView("_CommentPartial", viewModel);
         }
 
         [HttpPost]
@@ -110,7 +111,7 @@ namespace Sentio.Controllers
         {
             this.articleService.AddComment(viewModel.CommentViewModel.ArticleId, viewModel.CommentViewModel.Content);
 
-            return this.PartialView("_CommentPartial", viewModel);
+            return this.RedirectToAction("AllArticles");
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Sentio.Areas.Admin.Models
 
         public ArticleCommentViewModel CommentViewModel { get; set; }
 
-        public ICollection<ArticleCommentViewModel> Comments { get; set; }
+        public ICollection<Comment> Comments { get; set; }
 
     }
 }

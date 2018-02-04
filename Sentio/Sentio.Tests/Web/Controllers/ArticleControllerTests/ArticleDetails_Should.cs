@@ -41,7 +41,6 @@ namespace Sentio.Tests.Web.Controllers.ArticleControllerTests
                 .WithCallTo(c => c.ArticleDetails(articleId))
                 .ShouldRenderDefaultView()
                 .WithModel<ArticleViewModel>(m => m.Id == articleId);
-                //.WithModel(viewModel);
         }
     }
 }

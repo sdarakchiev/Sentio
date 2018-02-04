@@ -122,3 +122,7 @@ span {
 #results{
     margin-bottom:30px;
 }
+
+#comment-box{
+    align-items:center;
+}

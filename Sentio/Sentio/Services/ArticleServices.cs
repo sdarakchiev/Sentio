@@ -61,6 +61,7 @@ namespace Sentio.Areas.Admin.Services
                 .Select(a =>
                 new ArticleModel()
                 {
+                    Id = a.Id,
                     Title = a.Title,
                     Content = a.Content,
                     Author = a.Author

@@ -9,8 +9,7 @@
         @*<div id="coloredLine"></div>*@
         <div id="content">
             @article.Content.Substring(0, 350)
-            @*@Html.ActionLink("[...]", "ArticleDetails", "~/Article", new { id = article.Id})*@
-            <a href="../Article/AllArticles">[...]</a>
+            <a href="../Article/ArticleDetails/@article.Id">[...]</a>
         </div>
         <div id="author">
             Автор: @article.Author
