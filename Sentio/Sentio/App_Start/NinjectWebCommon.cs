@@ -81,6 +81,7 @@ namespace Sentio.App_Start
 
             kernel.Bind<IArticleServices>().To<ArticleServices>();
             kernel.Bind<IEventService>().To<EventService>();
+            kernel.Bind<IProfileServices>().To<ProfileServices>();
         }        
     }
 }

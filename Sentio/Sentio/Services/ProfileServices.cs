@@ -31,6 +31,7 @@ namespace Sentio.Services
 
             var user = this.dbContext.Users.First(u => u.UserName == userName);
             user.Events.Add(newEvent);
+            this.dbContext.SaveChanges();
         }
 
     }
