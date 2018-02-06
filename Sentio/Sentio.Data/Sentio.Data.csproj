@@ -83,6 +83,7 @@
     <Compile Include="DataModels\Event.cs" />
     <Compile Include="DataModels\Like.cs" />
     <Compile Include="Models\ArticleModel.cs" />
+    <Compile Include="Models\EventModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ArticleCommentViewModel.cs" />
     <Compile Include="ViewModels\EventContainerViewModel.cs" />

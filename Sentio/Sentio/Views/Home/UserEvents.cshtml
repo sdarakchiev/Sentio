@@ -1,6 +1,6 @@
-﻿@model IEnumerable<EventViewModel>
+﻿@model ProfileViewModel
 
-@foreach (var newEvent in Model)
+@foreach (var newEvent in Model.Events)
 {
     <div id="title">
         @newEvent.Name.ToUpper()

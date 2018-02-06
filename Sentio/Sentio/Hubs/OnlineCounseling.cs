@@ -10,7 +10,9 @@ namespace Sentio.Hubs
     {
         public void SendMessage (string message)
         {
-            string sentMessage = $"{this.Context.User.Identity.Name}: {message}";
+            string userName = this.Context.User.Identity.Name;
+            string name = userName.Substring(0, userName.IndexOf('@'));
+            string sentMessage = $"{name}: {message}";
             Clients.All.newMessage(sentMessage);
         }
     }

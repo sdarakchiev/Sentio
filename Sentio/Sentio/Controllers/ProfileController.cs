@@ -29,11 +29,21 @@ namespace Sentio.Controllers
         [Authorize]
         public ActionResult UserProfile()
         {
-            var userName = HttpContext.User.Identity.Name;
+            var userName = this.User.Identity.Name;
+
+            var events = this.profileService
+                .EventsForUser(userName)
+                .Select(e => new EventViewModel()
+                {
+                    Name = e.Name,
+                    Description = e.Description
+                })
+                .ToList();
 
             var viewProfile = new ProfileViewModel()
             {
-                Username = userName
+                Username = userName,
+                Events = events
             };
             return this.View(viewProfile);
         }
@@ -48,7 +58,6 @@ namespace Sentio.Controllers
                 .EventsForUser(userName)
                 .Select(e => new EventViewModel()
                 {
-                    Id = e.Id,
                     Name = e.Name,
                     Description = e.Description
                 })

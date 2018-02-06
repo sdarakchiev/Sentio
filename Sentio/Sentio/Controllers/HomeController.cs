@@ -98,7 +98,6 @@ namespace Sentio.Controllers
                 .EventsForUser(userName)
                 .Select(e => new EventViewModel()
                 {
-                    Id = e.Id,
                     Name = e.Name,
                     Description = e.Description
                 })

@@ -1,4 +1,5 @@
 ﻿using Sentio.Data.DataModels;
+using Sentio.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,6 @@ namespace Sentio.Services
     {
         void JoinEvent(int eventId, string userName);
 
-        IEnumerable<Event> EventsForUser(string userName);
+        IEnumerable<EventModel> EventsForUser(string userName);
     }
 }

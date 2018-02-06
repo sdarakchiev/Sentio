@@ -1,5 +1,6 @@
 ﻿using Bytes2you.Validation;
 using Sentio.Data.DataModels;
+using Sentio.Data.Models;
 using Sentio.Data.ViewModels;
 using Sentio.Models;
 using System;
@@ -20,9 +21,21 @@ namespace Sentio.Services
             this.dbContext = dbContext;
         }
 
-        public IEnumerable<Event> EventsForUser(string userName)
+        public IEnumerable<EventModel> EventsForUser(string userName)
         {
-            return this.dbContext.Users.First(u => u.UserName == userName).Events.ToList();
+            var user = this.dbContext.Users.First(u => u.UserName == userName);
+
+            var events = this.dbContext
+                .Events
+                .Where(e => e.Users.First().Id == user.Id)
+                .Select(e => new EventModel
+                {
+                    Name = e.Name,
+                    Description = e.Description
+                })
+                .ToList();
+
+            return events;
         }
 
         public void JoinEvent(int eventId, string userName)
