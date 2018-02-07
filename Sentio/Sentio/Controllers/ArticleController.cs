@@ -111,7 +111,7 @@ namespace Sentio.Controllers
         {
             this.articleService.AddComment(viewModel.CommentViewModel.ArticleId, viewModel.CommentViewModel.Content);
 
-            return this.RedirectToAction("AllArticles");
+            return this.PartialView("_CommentPartial");
         }
     }
 }

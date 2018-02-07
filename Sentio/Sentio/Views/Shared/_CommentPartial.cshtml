@@ -1,7 +1,7 @@
 ﻿@model ArticleViewModel
     <h4>Comments</h4>
 
-@using (Html.BeginForm("Comment", "Article",  FormMethod.Post))
+@*@using (Html.BeginForm("Comment", "Article",  FormMethod.Post))*
 {
     @Html.AntiForgeryToken()
     <div id="comment-box">
@@ -12,7 +12,7 @@
     <div>
         <input type="submit" value="Save" />
     </div>
-}
+}*@
 
 @foreach (var comment in Model.Comments)
 {

@@ -361,7 +361,6 @@
     <Content Include="Views\Shared\_OnlineCounseling.cshtml" />
     <Content Include="Views\OnlineCounseling\Index.cshtml" />
     <Content Include="Views\Shared\_SideBar.cshtml" />
-    <Content Include="Views\Article\Comment.cshtml" />
     <Content Include="Views\Event\AllEvents.cshtml" />
     <Content Include="Views\Event\EventDetails.cshtml" />
     <Content Include="Views\Home\UserEvents.cshtml" />

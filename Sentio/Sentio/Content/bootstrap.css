@@ -4935,6 +4935,7 @@ a.list-group-item.active > .badge,
     line-height: 2.1428571435;
     color: white;
     background-image: url('../../leaves.jpg');
+    background-position:left;
     background-color: #eeeeee;
 }
 
@@ -4949,6 +4950,7 @@ a.list-group-item.active > .badge,
 
 .container .jumbotron {
     width:100%;
+    height: 300px;
 }
 
 @media screen and (min-width: 768px) {

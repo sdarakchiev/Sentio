@@ -11,24 +11,38 @@
 
 @*@Html.Action("Comment", "Article", new { articleId = Model.Id })*@
 
-@if(User.Identity.IsAuthenticated)
+@*@if(User.Identity.IsAuthenticated)
 {
 @Html.Partial("_CommentPartial")
-}
-
-@*@using (Ajax.BeginForm("Comment",
-                            new AjaxOptions()
-                            {
-                                UpdateTargetId = "comment",
-                                InsertionMode = InsertionMode.Replace
-                            }))
+}*@
+@if (User.Identity.IsAuthenticated)
 {
-    <input type="text" name="Content" />
-    <input type="submit" value="Save" />
-}
+    using (Ajax.BeginForm("Comment", "Article",
+                                        new AjaxOptions()
+                                        {
+                                            UpdateTargetId = "comment",
+                                            InsertionMode = InsertionMode.Replace,
+                                            HttpMethod = "POST"
+                                        }))
+    {
+        @*<textarea></textarea>
+        <input type="submit" value="Save" />*@
+        @Html.AntiForgeryToken()
+        <div id="comment-box">
+            @Html.HiddenFor(m => m.CommentViewModel.ArticleId)
+            @Html.TextAreaFor(m => m.CommentViewModel.Content, "Comment: ")
+        </div>
 
-<div id="comment">
-</div>*@
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    }
+
+    <div id="comment">
+        @Html.Partial("_CommentPartial", Model)
+    </div>
+
+}
 
 @section scripts{
     @Scripts.Render("~/bundles/jqueryajax")
