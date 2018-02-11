@@ -142,6 +142,8 @@
     <Compile Include="Web\Controllers\ArticleControllerTests\AllArticles_Should.cs" />
     <Compile Include="Web\Controllers\ArticleControllerTests\ArticleDetails_Should.cs" />
     <Compile Include="Web\Services\ArticleServicesTests\AddArticle_Should.cs" />
+    <Compile Include="Web\Services\ArticleServicesTests\AddComment_Should.cs" />
+    <Compile Include="Web\Services\ArticleServicesTests\AllComments_Should.cs" />
     <Compile Include="Web\Services\ArticleServicesTests\DeleteArticle_Should.cs" />
     <Compile Include="Web\Services\ArticleServicesTests\FindArticle_Should.cs" />
     <Compile Include="Web\Services\ArticleServicesTests\ListAllArticles_Should.cs" />
