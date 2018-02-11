@@ -151,6 +151,7 @@
     <Compile Include="Web\Services\EventServiceTests\CreateEventShould.cs" />
     <Compile Include="Web\Services\EventServiceTests\DeleteEventShould.cs" />
     <Compile Include="Web\Services\EventServiceTests\GetEventShould.cs" />
+    <Compile Include="Web\Services\ProfileServicesTests\JoinEvent_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
