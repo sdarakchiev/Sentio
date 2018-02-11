@@ -4934,6 +4934,7 @@ a.list-group-item.active > .badge,
     font-weight: 200;
     line-height: 2.1428571435;
     color: white;
+    text-align: center;
     background-image: url('../../leaves.jpg');
     background-position:left;
     background-color: #eeeeee;

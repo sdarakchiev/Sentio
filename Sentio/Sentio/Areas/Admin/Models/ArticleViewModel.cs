@@ -27,5 +27,6 @@ namespace Sentio.Areas.Admin.Models
 
         public ICollection<Comment> Comments { get; set; }
 
+        public ICollection<Like> Likes { get; set; }
     }
 }

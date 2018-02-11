@@ -9,12 +9,19 @@
 
 <p>@Model.Content</p>
 
-@*@Html.Action("Comment", "Article", new { articleId = Model.Id })*@
-
-@*@if(User.Identity.IsAuthenticated)
+@if (User.Identity.IsAuthenticated)
 {
-@Html.Partial("_CommentPartial")
-}*@
+        @Html.Partial("_LikeArticle", Model)
+
+}
+else
+{
+    <div>
+        Likes: @Model.Likes.Count()
+    </div>
+}
+
+
 @if (User.Identity.IsAuthenticated)
 {
     using (Ajax.BeginForm("Comment", "Article",
@@ -22,28 +29,27 @@
                                         {
                                             UpdateTargetId = "comment",
                                             InsertionMode = InsertionMode.Replace,
-                                            HttpMethod = "POST"
                                         }))
     {
         @*<textarea></textarea>
-        <input type="submit" value="Save" />*@
+            <input type="submit" value="Save" />*@
         @Html.AntiForgeryToken()
         <div id="comment-box">
+            <h3 id="add-comment">Добави коментар</h3>
             @Html.HiddenFor(m => m.CommentViewModel.ArticleId)
-            @Html.TextAreaFor(m => m.CommentViewModel.Content, "Comment: ")
+            @Html.TextAreaFor(m => m.CommentViewModel.Content, new { @id = "comment-textbox" })
         </div>
 
         <div>
-            <input type="submit" value="Save" />
+            <input type="submit" id="save-comment" value="Save" />
         </div>
     }
 
     <div id="comment">
-        @Html.Partial("_CommentPartial", Model)
+        @Html.Partial("_CommentPartial")
     </div>
 
 }
-
 @section scripts{
     @Scripts.Render("~/bundles/jqueryajax")
 }

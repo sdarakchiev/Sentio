@@ -1,0 +1,19 @@
+﻿@model ArticleViewModel
+
+@using (Ajax.BeginForm("Like", "Article", new {articleId = Model.Id},
+                new AjaxOptions
+                {
+                    UpdateTargetId = "like-button",
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "POST"
+                }))
+{
+    <div id="likes">
+        @Html.AntiForgeryToken()
+        <button type="submit"> Like </button>
+        Likes: @Model.Likes.Count()
+    </div>
+   
+}
+   
+<div id="like-button"></div>

@@ -242,6 +242,10 @@
     <Compile Include="Migrations\201801311412374_user-comments.Designer.cs">
       <DependentUpon>201801311412374_user-comments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802111013096_Article-Like relation.cs" />
+    <Compile Include="Migrations\201802111013096_Article-Like relation.Designer.cs">
+      <DependentUpon>201802111013096_Article-Like relation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\ArticleServices.cs" />
     <Compile Include="Services\EventService.cs" />
     <Compile Include="Services\IArticleServices.cs" />
@@ -365,6 +369,7 @@
     <Content Include="Views\Event\EventDetails.cshtml" />
     <Content Include="Views\Home\UserEvents.cshtml" />
     <Content Include="Views\Shared\_JoinEvent.cshtml" />
+    <Content Include="Views\Shared\_LikeArticle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -409,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801311412374_user-comments.resx">
       <DependentUpon>201801311412374_user-comments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802111013096_Article-Like relation.resx">
+      <DependentUpon>201802111013096_Article-Like relation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

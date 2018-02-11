@@ -1,5 +1,5 @@
 ﻿@model ArticleViewModel
-    <h4>Comments</h4>
+    <h3 id="comments-title">Коментари</h3>
 
 @*@using (Html.BeginForm("Comment", "Article",  FormMethod.Post))*
 {
@@ -19,5 +19,4 @@
     <div id="comments">
         <p>@comment.Content</p>
     </div>
-   
 }

@@ -19,8 +19,7 @@
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
-select,
-textarea {
+select{
     max-width: 280px;
 }
 
@@ -124,5 +123,32 @@ span {
 }
 
 #comment-box{
-    align-items:center;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+   
+
+#save-comment{
+    margin-left: 50px;
+}
+
+#comments{
+    margin-left: 50px;
+    margin-bottom: 20px;
+    width: 200px;
+    border-bottom: 1px solid grey;
+}
+
+#comment-textbox {
+    height: 100px;
+    width: 400px;
+}
+
+#comments-title{
+    margin: 20px 50px;
+}
+
+#likes{
+    margin-left:50px;
 }

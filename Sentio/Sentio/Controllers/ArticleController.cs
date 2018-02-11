@@ -45,7 +45,8 @@ namespace Sentio.Controllers
                 {
                     ArticleId = article.Id
                 },
-                Comments = article.Comments
+                Comments = article.Comments,
+                Likes = article.Likes
             };
 
             return this.View(viewModel);
@@ -113,5 +114,28 @@ namespace Sentio.Controllers
 
             return this.PartialView("_CommentPartial");
         }
+
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public ActionResult Like (int articleId)
+        {
+            var article = this.articleService.FindArticle(articleId);
+
+            this.articleService.AddLike(articleId);
+
+            var likes = this.articleService.AllArticleLikes(articleId);
+
+            var viewModel = likes
+                .Select(l => new ArticleViewModel
+            {
+                Id = articleId,
+                Likes = likes
+            })
+            .ToList();
+
+            return this.PartialView("_LikeArticle", viewModel);
+        }
+
     }
 }

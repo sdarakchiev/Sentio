@@ -90,6 +90,21 @@ namespace Sentio.Areas.Admin.Services
             return article.Comments.ToList();
         }
 
+        public void AddLike(int articleId)
+        {
+            var article = this.dbContext.Articles.First(a => a.Id == articleId);
+            Like like = new Like() { ArticleId = articleId };
+            article.Likes.Add(like);
+
+            this.dbContext.SaveChanges();
+        }
+
+        public ICollection<Like> AllArticleLikes(int articleId)
+        {
+            var article = this.dbContext.Articles.First(a => a.Id == articleId);
+
+            return article.Likes.ToList();
+        }
     }
 
 
