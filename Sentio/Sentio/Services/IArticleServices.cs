@@ -1,10 +1,6 @@
 ﻿using Sentio.Data.DataModels;
 using Sentio.Data.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sentio.Areas.Admin.Services
 {

@@ -1,13 +1,9 @@
 ﻿using Bytes2you.Validation;
 using Sentio.Areas.Admin.Models;
 using Sentio.Areas.Admin.Services;
-using Sentio.Data.DataModels;
 using Sentio.Data.ViewModels;
 using Sentio.Services;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Sentio.Areas.Admin.Controllers
@@ -51,7 +47,6 @@ namespace Sentio.Areas.Admin.Controllers
 
             return View(viewModel);
 
-            //return View();
         }
 
        

@@ -1,14 +1,12 @@
 ﻿using Bytes2you.Validation;
 using Sentio.Data.ViewModels;
 using Sentio.Services;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Sentio.Controllers
 {
+    [Authorize]
     public class ProfileController : Controller
     {
         private readonly IProfileServices profileService;
@@ -26,7 +24,6 @@ namespace Sentio.Controllers
             return View();
         }
 
-        [Authorize]
         public ActionResult UserProfile()
         {
             var userName = this.User.Identity.Name;
@@ -66,6 +63,7 @@ namespace Sentio.Controllers
             return this.PartialView(viewModel);
         }
 
+        [ValidateAntiForgeryToken]
         public ActionResult JoinEvent(EventViewModel viewModel)
         {
             var userName = this.User.Identity.Name;

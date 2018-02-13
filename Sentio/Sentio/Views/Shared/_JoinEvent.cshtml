@@ -4,6 +4,8 @@
 {
     using (Html.BeginForm("JoinEvent", "Profile", FormMethod.Post))
     {
+        @Html.AntiForgeryToken()
+
         @Html.HiddenFor(m => m.Id)
         @Html.HiddenFor(m => m.Name)
         @Html.HiddenFor(m => m.Description)

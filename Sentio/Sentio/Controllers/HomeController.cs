@@ -88,6 +88,7 @@ namespace Sentio.Controllers
             return this.View(viewProfile);
         }
 
+        [Authorize]
         public ActionResult UserEvents()
         {
             var userName = HttpContext.User.Identity.Name;

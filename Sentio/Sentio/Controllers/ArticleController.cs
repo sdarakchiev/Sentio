@@ -1,22 +1,16 @@
-﻿using Sentio.Areas.Admin.Models;
+﻿using Bytes2you.Validation;
+using Sentio.Areas.Admin.Models;
 using Sentio.Areas.Admin.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
 using Sentio.Data.ViewModels;
-using Sentio.Data.DataModels;
-using Bytes2you.Validation;
 using Sentio.Services;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace Sentio.Controllers
 {
     public class ArticleController : Controller
     {
         private readonly IArticleServices articleService;
-        private readonly IProfileServices profileService;
 
         public ArticleController(IArticleServices articleService)
         {

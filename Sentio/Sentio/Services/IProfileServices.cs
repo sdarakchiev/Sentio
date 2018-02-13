@@ -1,10 +1,5 @@
-﻿using Sentio.Data.DataModels;
-using Sentio.Data.Models;
-using System;
+﻿using Sentio.Data.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sentio.Services
 {
